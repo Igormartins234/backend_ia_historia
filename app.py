@@ -11,6 +11,14 @@ load_dotenv()
 # Inicializando o Flask
 app = Flask(__name__)
 
+
+
+@app.route('/', methods=['GET'])
+def home():
+    return jsonify({'mensagem': 'API está funcionando!'}), 200
+
+
+
 # Habilitar CORS para aceitar requisições de qualquer origem
 CORS(app)
 
